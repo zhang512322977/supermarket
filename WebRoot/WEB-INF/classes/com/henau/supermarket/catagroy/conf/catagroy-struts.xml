@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="catagroy-action" namespace="/catagroy" extends="base-default">
+		<action name="catagroy_*" class="com.henau.supermarket.catagroy.action.CatagroyAction" method="{1}">
+			<!-- 返回请求页面 -->
+			<result name="{1}">/jsp/{1}.jsp</result>
+			<!--注册成功返回登录页面  -->
+			<result name="success">/jsp/login.jsp</result>	
+			<!--登陆成功返回主页  -->
+			<result name="index">/index.jsp</result>
+			<result name="user-info">/jsp/user-info.jsp</result>
+			<result name="good">/jsp/dp/good/good.jsp</result>
+			<result name="shop-add">/jsp/dp/shop-add.jsp</result>
+			<result name="clist">/jsp/product-catagroy.jsp</result>
+			<result name="c3list">/jsp/product-catagroy3.jsp</result>
+			<result name="c2list">/jsp/product-catagroy2.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>

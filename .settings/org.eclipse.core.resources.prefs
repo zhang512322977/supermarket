@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//WebRoot/jsp/dp/brands.jsp=UTF-8
+encoding//WebRoot/jsp/dp/good/good-add.jsp=UTF-8
+encoding//WebRoot/jsp/dp/shop-add.jsp=UTF-8
+encoding//WebRoot/jsp/dp/shop-next.jsp=UTF-8
+encoding//WebRoot/jsp/dp/shop.jsp=UTF-8
+encoding//WebRoot/jsp/kj/kefu.jsp=UTF-8
+encoding//WebRoot/jsp/kj/top.jsp=UTF-8
+encoding//WebRoot/jsp/kj/user-left.jsp=UTF-8
+encoding//WebRoot/jsp/user-center.jsp=UTF-8
+encoding//WebRoot/jsp/user-info.jsp=UTF-8
+encoding//src/com/henau/supermarket/core/dao/BaseDao.java=gbk
+encoding//src/com/henau/supermarket/core/dao/impl/BaseDaoImpl.java=gbk
+encoding/<project>=UTF-8

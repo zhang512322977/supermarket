@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="shop-action" namespace="/shop" extends="base-default">
+		<action name="shop_*" class="com.henau.supermarket.good.action.ShopAction" method="{1}">
+			<!-- 返回请求页面 -->
+			<result name="{1}">/jsp/{1}.jsp</result>
+			<!--注册成功返回登录页面  -->
+			<result name="success">/jsp/login.jsp</result>	
+			<!--登陆成功返回主页  -->
+			<result name="index">/index.jsp</result>
+			<result name="user-info">/jsp/user-info.jsp</result>
+			<result name="shop">/jsp/dp/shop.jsp</result>
+			<result name="shop-add">/jsp/dp/shop-add.jsp</result>
+			<result name="next">/jsp/dp/shop-next.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>

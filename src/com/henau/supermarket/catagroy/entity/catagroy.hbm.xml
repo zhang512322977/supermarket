@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+  <class name="com.henau.supermarket.catagroy.entity.Catagroy" table="catagroy">
+  		
+  		 <id name="caid" type="java.lang.String">
+  		   <column name="caid" length="32" />
+  		  <generator class="uuid.hex" />
+  		 </id>
+  		<property name="name"/>
+  		<property name="num"/>
+  	<!-- 	inverse="true" lazy="false" cascade="save-update,delete" -->
+  		 <set name="c2set" lazy="false"  cascade="save-update,delete" >
+  			<key column="c1_id" />
+			<one-to-many class="com.henau.supermarket.catagroy.entity.Catagroy2" />
+  		</set> 
+  </class>
+
+  <class name="com.henau.supermarket.catagroy.entity.Catagroy2">
+  		 <id name="c2id">
+  		   <column name="c2id" length="32"></column>
+  		   <generator class="uuid.hex"></generator>
+  		 </id>
+  		<property name="name"/>
+  		<property name="num"/>
+  	  <!--   <many-to-one name="catagroy" class="com.henau.supermarket.catagroy.entity.Catagroy" column="c1_id" /> -->
+  		<set name="c3set" lazy="false"  cascade="save-update,delete">
+  			<key column="c2_id" />
+			<one-to-many class="com.henau.supermarket.catagroy.entity.Catagroy3" />
+  		</set>
+  </class>
+    <class name="com.henau.supermarket.catagroy.entity.Catagroy3">
+  		 <id name="c3id">
+  		   <column name="c3id" length="32"></column>
+  		   <generator class="uuid.hex"></generator>
+  		 </id>
+  		<property name="name"/>
+  		<property name="num"/>
+  	 <!-- 	<many-to-one name="catagroy2" class="com.henau.supermarket.catagroy.entity.Catagroy2" column="c2_id" />  -->
+  	 	<set name="gset" lazy="false"  cascade="save-update,delete">
+  			<key column="g_id" />
+			<one-to-many class="com.henau.supermarket.good.entity.Good" />
+  		</set> 
+  </class>
+  
+    <class name="com.henau.supermarket.catagroy.entity.Xcatagroy">
+  		 <id name="id">
+  		   <column name="id" length="32"></column>
+  		   <generator class="uuid.hex"></generator>
+  		 </id>
+  		<property name="name"/>
+  		<property name="num"/>
+  	 	<!--  <set name="gset" lazy="false"  cascade="save-update,delete" >
+  			<key column="g_id" />
+			<one-to-many class="com.henau.supermarket.good.entity.Good" />
+  		</set>  -->
+  	 
+  </class>
+
+</hibernate-mapping>

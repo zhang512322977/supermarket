@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.henau.supermarket.good.domain.Good" table="good">
+		<!-- //商品编号 private String gid; //商品名称 private String gname; //商品单价 private 
+			String gprices; //商品库存 private String num; //商品分类123 private String catagroy1; 
+			private String catagroy2; private String catagroy3; //商品图片 private String 
+			gimage; //商品规格 private String gguige; //概要介绍 private String gaiyao; -->
+
+		<id name="gid" type="java.lang.String">
+			<column name="gid" length="32" />
+			<generator class="uuid.hex" />
+		</id>
+		<property name="gname" />
+		<property name="gprices" />
+		<property name="num" />
+		<property name="catagroy1" />
+		<property name="catagroy2" />
+		<property name="catagroy3" />
+		<property name="gimage" />
+		<property name="gguige" />
+		<property name="gaiyao" />
+		
+		
+
+	</class>
+</hibernate-mapping>

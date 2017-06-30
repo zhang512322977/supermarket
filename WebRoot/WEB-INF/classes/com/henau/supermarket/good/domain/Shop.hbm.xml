@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.henau.supermarket.good.domain.Shop" table="shop">
+
+		<id name="sid" type="java.lang.String">
+			<column name="sid" length="32" />
+			<generator class="uuid.hex" />
+		</id>
+		<!-- <property name="username"/> <property name="password"/> <property 
+			name="nickname"/> <property name="telephone"/> <property name="email"/> <property 
+			name="sex"/> <property name="imagepath"/> <property name="qq"/> <property 
+			name="isadmin" type="java.lang.Boolean"/> <property name="birthday" type="java.util.Date"/> -->
+
+
+
+		<property name="shopname" type="java.lang.String">
+			<column name="shop_name" not-null="true" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="address" not-null="true" />
+		</property>
+		<property name="simage" type="java.lang.String">
+			<column name="simage" />
+		</property>
+		<property name="limage" type="java.lang.String">
+			<column name="limage" />
+		</property>
+		<property name="sjianjie" type="java.lang.String">
+			<column name="sjianjie" />
+		</property>
+		<property name="xximage" type="java.lang.String">
+			<column name="xximage" />
+		</property>
+		<property name="xiangxi" type="java.lang.String">
+			<column name="xiangxi" />
+		</property>
+		<!-- <one-to-one name="ower" class="com.henau.supermarket.user.domain.User" constrained="true" cascade="save-update"></one-to-one> -->
+		<many-to-one name="ower"  class="com.henau.supermarket.user.domain.User"
+		column="ower" foreign-key="fk_user" not-null="true" />	
+		<set name="gset"  lazy="false" cascade="save-update,delete">
+			<key column="g_id" />
+			<one-to-many class="com.henau.supermarket.good.domain.Good" />
+		</set>
+	</class>
+</hibernate-mapping>
